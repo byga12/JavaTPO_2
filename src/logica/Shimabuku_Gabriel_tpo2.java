@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package logica;
 
-/**
- *
- * @author Micaela
- */
+
 public class Shimabuku_Gabriel_tpo2 {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+ 
+        
+        
+        Controladora control = new Controladora();
+        
+//        Cliente cli = new Cliente("99999", "Fido", "Caniche", "Blanco", false, false, "Jorge", "1198526671", "Ninguna");
+        
+        
+        
+        
     }
     
 }
