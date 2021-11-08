@@ -10,8 +10,7 @@ public class Shimabuku_Gabriel_tpo2 {
         
         Controladora control = new Controladora();
         
-//        Cliente cli = new Cliente("99999", "Fido", "Caniche", "Blanco", false, false, "Jorge", "1198526671", "Ninguna");
-        
+//        Cliente cli = new Cliente(null, "Fido", "Caniche", "Blanco", false, false, "Jorge", "1198526671", "Ninguna");
         
         
         

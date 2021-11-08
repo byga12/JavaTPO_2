@@ -4,12 +4,16 @@ package logica;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Cliente implements Serializable {
     
+    //el GeneratedValue sirve para generar IDs de forma automática, de forma que al crear una objeto Cliente si ponemos null en donde correspondería un id lo generá automáticamente
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String num_cliente;
     @Basic
     private String nombre_perro;
