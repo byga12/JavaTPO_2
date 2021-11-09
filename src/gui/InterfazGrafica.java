@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
-/**
- *
- * @author Micaela
- */
-public class InterfazGrafica extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
+import logica.Controladora;
 
-    /**
-     * Creates new form InterfazGrafica
-     */
-    public InterfazGrafica() {
+
+public class InterfazGrafica extends javax.swing.JFrame {
+    Controladora control;
+
+    public InterfazGrafica(Controladora control) {
+        this.control = control;
         initComponents();
     }
 
@@ -30,7 +24,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -41,7 +34,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         nombrePerroInput = new javax.swing.JTextField();
         razaInput = new javax.swing.JTextField();
-        numClienteInput = new javax.swing.JTextField();
         colorInput = new javax.swing.JTextField();
         nombreDuenioInput = new javax.swing.JTextField();
         celularDuenioInput = new javax.swing.JTextField();
@@ -51,14 +43,11 @@ public class InterfazGrafica extends javax.swing.JFrame {
         guardarButton = new javax.swing.JButton();
         limpiarButton = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        errorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 36)); // NOI18N
         jLabel1.setText("Peluquería canina");
-
-        jLabel2.setText("Cliente N°:");
 
         jLabel3.setText("Alérgico:");
 
@@ -76,18 +65,9 @@ public class InterfazGrafica extends javax.swing.JFrame {
 
         jLabel10.setText("Nombre de dueño:");
 
-        nombreDuenioInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreDuenioInputActionPerformed(evt);
-            }
-        });
+        observacionesInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         alergicoToggle.setText("Sí/No");
-        alergicoToggle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alergicoToggleActionPerformed(evt);
-            }
-        });
 
         atencionEspecialToggle.setText("Sí/No");
 
@@ -98,7 +78,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
                     .addComponent(jLabel4)
                     .addComponent(jLabel6)
                     .addComponent(jLabel5)
@@ -114,7 +93,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
                     .addComponent(colorInput)
                     .addComponent(razaInput)
                     .addComponent(nombrePerroInput)
-                    .addComponent(numClienteInput)
                     .addComponent(observacionesInput)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,11 +104,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(numClienteInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(nombrePerroInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -183,31 +157,28 @@ public class InterfazGrafica extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dog.png"))); // NOI18N
 
-        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
-        errorLabel.setText("*error");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(36, 36, 36))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(limpiarButton)
-                .addGap(43, 43, 43)
-                .addComponent(errorLabel)
-                .addGap(265, 265, 265)
-                .addComponent(guardarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(325, 325, 325))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(limpiarButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(guardarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(447, 447, 447))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addComponent(jLabel11)))
+                .addGap(36, 36, 36))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,15 +191,11 @@ public class InterfazGrafica extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLabel11)))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(errorLabel))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(guardarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(limpiarButton)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(guardarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(limpiarButton))
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,67 +213,54 @@ public class InterfazGrafica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarButtonActionPerformed
-        // TODO add your handling code here:
+
+        String nombrePerro = nombrePerroInput.getText();
+        String raza = razaInput.getText();
+        String color = colorInput.getText();
+        Boolean esAlergico = alergicoToggle.isSelected();
+        Boolean requiereAtencionEspecial = atencionEspecialToggle.isSelected();
+        String nombreDuenio = nombreDuenioInput.getText();
+        String celularDuenio = celularDuenioInput.getText();
+        String observaciones = observacionesInput.getText();
+    
+        //Validación
+        if(nombrePerro.equals("") || raza.equals("") || color.equals("") || nombreDuenio.equals("") || celularDuenio.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorios (excepto observaciones)", "Rellene los campos necesarios", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        
+        
+        //try catch aca?
+        control.altaCliente(nombrePerro, raza, color, esAlergico, requiereAtencionEspecial, nombreDuenio, celularDuenio, observaciones);
+        
+        //Mensaje de creación de cliente exiotsa
+        JOptionPane.showMessageDialog(rootPane, "Cliente agregado correctamente", "Cliente agregado", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_guardarButtonActionPerformed
 
     private void limpiarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarButtonActionPerformed
-        // TODO add your handling code here:
+
+        nombrePerroInput.setText("");
+        razaInput.setText("");
+        colorInput.setText("");
+        alergicoToggle.setSelected(false);
+        atencionEspecialToggle.setSelected(false);
+        nombreDuenioInput.setText("");
+        celularDuenioInput.setText("");
+        observacionesInput.setText("");
     }//GEN-LAST:event_limpiarButtonActionPerformed
 
-    private void alergicoToggleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alergicoToggleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alergicoToggleActionPerformed
 
-    private void nombreDuenioInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreDuenioInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreDuenioInputActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazGrafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazGrafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazGrafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazGrafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InterfazGrafica().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox alergicoToggle;
     private javax.swing.JCheckBox atencionEspecialToggle;
     private javax.swing.JTextField celularDuenioInput;
     private javax.swing.JTextField colorInput;
-    private javax.swing.JLabel errorLabel;
     private javax.swing.JButton guardarButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -319,7 +273,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
     private javax.swing.JButton limpiarButton;
     private javax.swing.JTextField nombreDuenioInput;
     private javax.swing.JTextField nombrePerroInput;
-    private javax.swing.JTextField numClienteInput;
     private javax.swing.JTextField observacionesInput;
     private javax.swing.JTextField razaInput;
     // End of variables declaration//GEN-END:variables
