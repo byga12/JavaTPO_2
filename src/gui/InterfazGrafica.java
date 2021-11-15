@@ -223,23 +223,21 @@ public class InterfazGrafica extends javax.swing.JFrame {
         String celularDuenio = celularDuenioInput.getText();
         String observaciones = observacionesInput.getText();
     
-        //Validación
+        //Validación, si alguno de los campos obligatorios está vacío, muestro un aviso y no añado nada a la db
         if(nombrePerro.equals("") || raza.equals("") || color.equals("") || nombreDuenio.equals("") || celularDuenio.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorios (excepto observaciones)", "Rellene los campos necesarios", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         
-        
-        //try catch aca?
+        //Si pasó la validación, doy de alta al nuevo cliente.
         control.altaCliente(nombrePerro, raza, color, esAlergico, requiereAtencionEspecial, nombreDuenio, celularDuenio, observaciones);
-        
         //Mensaje de creación de cliente exiotsa
         JOptionPane.showMessageDialog(rootPane, "Cliente agregado correctamente", "Cliente agregado", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_guardarButtonActionPerformed
 
     private void limpiarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarButtonActionPerformed
-
+        //Al hacer click en el botón "Limpiar" uso setText("") para vaciar todos los inputs.
         nombrePerroInput.setText("");
         razaInput.setText("");
         colorInput.setText("");

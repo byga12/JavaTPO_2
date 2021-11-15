@@ -11,7 +11,7 @@ public class ControladoraPersistencia {
     ClienteJpaController clienteJPA = new ClienteJpaController();
      
     
-    //Create method
+    //Create method, en caso de haber algún error, notifico por consola
     public void altaCliente(Cliente cliente) {
         try {
             clienteJPA.create(cliente);

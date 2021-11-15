@@ -11,7 +11,8 @@ import javax.persistence.Id;
 @Entity
 public class Cliente implements Serializable {
     
-    //el GeneratedValue sirve para generar IDs de forma automática, de forma que al crear una objeto Cliente si ponemos null en donde correspondería un id lo generá automáticamente
+    //el GeneratedValue sirve para generar IDs de forma automática, de forma que al crear una objeto Cliente si
+    //ponemos null en donde correspondería un id lo genera automáticamente
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String num_cliente;
@@ -25,9 +26,10 @@ public class Cliente implements Serializable {
     private String celular_duenio;
     private String observaciones;
 
+    
+    //CONSTRUCTORES
     public Cliente() {
     }
-
     public Cliente(String num_cliente, String nombre_perro, String raza, String color, Boolean es_alergico, Boolean requiere_atencion_especial, String nombre_duenio, String celular_duenio, String observaciones) {
         this.num_cliente = num_cliente;
         this.nombre_perro = nombre_perro;
@@ -40,6 +42,7 @@ public class Cliente implements Serializable {
         this.observaciones = observaciones;
     }
 
+    //GETTERS Y SETTERS
     public String getNum_cliente() {
         return num_cliente;
     }

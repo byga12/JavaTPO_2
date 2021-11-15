@@ -9,10 +9,22 @@ public class Controladora { // a.k.a la clase del admin
     //controla solicitudes que llegan de la GUI y hace de intermediario entre esta y la persistencia.
     
     
-    
+    //Llamo a la controladora de la persistencia
     ControladoraPersistencia controlPersistencia = new ControladoraPersistencia();    
     
-    public void altaCliente(String nombrePerro, String raza, String color, Boolean esAlergico, Boolean requiereAtencionEspecial, String nombreDuenio, String celularDuenio, String observaciones){
+    //el método altaCliente() utiliza la controladora de la persistencia para crear un registro
+    //de cliente en la base de datos, tiene 2 formas, una pasándole un objeto Cliente, y la otra
+    //pasándole los atributos.
+    public void altaCliente(
+            String nombrePerro, 
+            String raza, 
+            String color, 
+            Boolean esAlergico, 
+            Boolean requiereAtencionEspecial, 
+            String nombreDuenio, 
+            String celularDuenio, 
+            String observaciones){
+        
         Cliente cliente = new Cliente();
         
         cliente.setNombre_perro(nombrePerro);
