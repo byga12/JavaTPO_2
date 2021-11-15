@@ -1,0 +1,4 @@
+Nombre de base de datos: peluqueria
+
+Usuario: admin_peluqueria
+contraseña: papasalhorno
